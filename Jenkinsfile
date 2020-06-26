@@ -15,6 +15,7 @@ pipeline {
  steps{
  script {
  dockerImage = docker.build registry + ":$BUILD_NUMBER"
+ dockerImage = docker.build('poc-ca')
  }
  }
  }
@@ -30,7 +31,7 @@ pipeline {
    steps{
     script {
   docker.withRegistry('https://159254558323.dkr.ecr.ap-south-1.amazonaws.com', 'ecr:ap-south-1:AWS-raj-singh-admin') {
-  docker.image('poc-ca').push()
+  docker.image('poc-ca').push('latest')
   }
     }
    }
