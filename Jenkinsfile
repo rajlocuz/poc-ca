@@ -26,9 +26,14 @@ pipeline {
  dockerImage.push('latest')
  }}
  }}
- stage 'Push to ECR'
+  stage('Push to ECR') {
+   steps{
+    script {
   docker.withRegistry('https://159254558323.dkr.ecr.ap-south-1.amazonaws.com/poc-ca', 'ecr.ap-south-1:AWS-raj-singh-admin') {
-    docker.image('poc-ca').push('latest')
+  docker.image('poc-ca').push('latest')
+  }
+    }
+   }
   }
  }
 }
