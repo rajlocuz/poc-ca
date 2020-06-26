@@ -14,19 +14,19 @@ pipeline {
  stage('Building Docker Image') {
  steps{
  script {
- dockerImage = docker.build registry + ":$BUILD_NUMBER"
+ //dockerImage = docker.build registry + ":$BUILD_NUMBER"
  dockerImage = docker.build('poc-ca')
  }
  }
  }
- stage('Push Image to Docker Hub') {
+ /*stage('Push Image to Docker Hub') {
  steps{
  script {
  docker.withRegistry( '', registryCredential ) {
  dockerImage.push()
  dockerImage.push('latest')
  }}
- }}
+ }}*/
   stage('Push to ECR') {
    steps{
     script {
