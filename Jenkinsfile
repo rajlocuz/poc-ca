@@ -30,7 +30,7 @@ pipeline {
    steps{
     script {
   docker.withRegistry('https://159254558323.dkr.ecr.ap-south-1.amazonaws.com', 'ecr:ap-south-1:AWS-raj-singh-admin') {
-  docker.image('poc-ca' + ':latest').push('latest')
+  docker.image('poc-ca').push()
   }
     }
    }
