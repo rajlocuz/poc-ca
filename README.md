@@ -1,2 +1,2 @@
 # POC (AaaS)
-POC (script) for Automation as a Service 
+POC for Automation as a Service 
