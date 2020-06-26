@@ -1,7 +1,8 @@
 pipeline {
  environment {
- registry = "rajlocuz/poc-ca"
- registryCredential = 'rajlocuz-dockerhub'
+ //registry = "rajlocuz/poc-ca"
+  registry = "poc-ca"
+ //registryCredential = 'rajlocuz-dockerhub'
  dockerImage = ''
  }
  agent any
@@ -14,8 +15,8 @@ pipeline {
  stage('Building Docker Image') {
  steps{
  script {
- //dockerImage = docker.build registry + ":$BUILD_NUMBER"
- dockerImage = docker.build('poc-ca') + ":$BUILD_NUMBER"
+ dockerImage = docker.build registry + ":$BUILD_NUMBER"
+ //dockerImage = docker.build('poc-ca')
  }
  }
  }
