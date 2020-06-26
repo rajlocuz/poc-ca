@@ -8,7 +8,7 @@ pipeline {
  stages {
  stage('Cloning Git') {
  steps {
- git 'https://github.com/rajlocuz/nginx-php-fpm.git'
+ git 'https://github.com/rajlocuz/poc-ca.git'
  }
  }
  stage('Building Docker Image') {
